@@ -1,5 +1,9 @@
 require "bundler/setup"
 require "json_serializers"
+require "active_model"
+
+$: << File.expand_path(__dir__)
+Dir["./spec/fixtures/**/*.rb"].sort.uniq.each { |rb| require rb }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
